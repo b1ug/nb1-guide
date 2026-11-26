@@ -19,7 +19,7 @@
     "check:provenance": "node scripts/check-provenance.mjs"
   },
   "devDependencies": {
-    "@b1ug/blink1-models": "https://codeload.github.com/b1ug/blink1-models/tar.gz/dc531ccaa88e031faf6c0cd32e0102d9a18e9b8d",
+    "@b1ug/blink1-models": "https://codeload.github.com/b1ug/blink1-models/tar.gz/7be4133489b734314aba9f0fff944b57b7d21791",
     "vite": "6.4.6",
     "vitepress": "1.6.4",
     "vue": "3.5.45"

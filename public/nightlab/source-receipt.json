@@ -1,18 +1,19 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-11-17",
+  "recorded_on": "2026-11-26",
   "reference": "Nightlab documentation viewer and blink(1) Models MK2 display assembly",
   "target_base": "579380283d1c19eb42d903592efb432301d63652",
-  "scope": "Optional presentation-only 3D viewer for the nb1 documentation home. No compiler, WASM, transport, simulation, API or device state.",
+  "scope": "Same-origin assembled mk2 and simulated diffuser lighting on the documentation home. The viewer uses fixed screen preview colors and has no device transport.",
   "adaptations": [
     "Viewer accepts a component-owned stage instead of querying the document.",
     "Vue mount/unmount owns listeners, observers, animation, WebGL and pending async load cancellation.",
     "Model notes link to the localized docs architecture attribution.",
-    "Native Vue component retains reference CAD-derived two-face fallback paths and unspecified state.",
+    "The CAD-derived two-face fallback displays the fixed preview colors.",
     "Mobile copy pass: visible drag hint shortened; full canvas keyboard/zoom labels and all viewer behavior retained. Native model-details disclosure keeps fixed LED labels, no-device context and attribution discoverable.",
     "Viewer and Vue links honor the configured project base for static hosting.",
     "Public CAD metadata omits local paths, physical-device identifiers and private project-note excerpts; a project-note-only code comment and excerpt asset are excluded. Original private handoff is preserved. STL geometry, Three.js, licenses and approved brand artwork are unchanged.",
-    "The display assembly and source notice now come from the pinned blink(1) Models package. The documentation viewer and its lifecycle stay local."
+    "The display assembly and source notice now come from the pinned blink(1) Models package. The documentation viewer and its lifecycle stay local.",
+    "Use the assembled CAD, the two PCB-mounted LEDs, optical transport, studio lighting and initial camera pose from the pinned catalog. The docs preview displays #003dff / #ff1804 and does not access hardware."
   ],
   "policy": {
     "same_origin_only": true,
@@ -21,29 +22,39 @@
     "compiler": false,
     "hardware_access": false,
     "optional_route": "3D assets load only when the home component mounts; docs routes do not load CAD or Three.js.",
-    "payload_bytes": 7826202,
+    "payload_bytes": 7876670,
     "budgets": "No embedded daemon payload budgets changed; documentation static optional assets are separate."
   },
   "licenses": {
-    "CAD_and_derived_model": "CC-BY-SA-4.0; original STL files, model-assets/LICENSE.txt and seating-fit.json unchanged; source.json retains attribution with private project metadata omitted.",
+    "CAD_and_derived_model": "CC-BY-SA-4.0 for the enclosure and derived geometry. See model-assets/LICENSE.txt.",
     "Three.js": "MIT; vendor/three/LICENSE.txt preserved",
-    "brand": "Approved nb1 mascot and favicon unchanged; no new brand artwork."
+    "brand": "Approved nb1 mascot and favicon unchanged; no new brand artwork.",
+    "PCB_layout_and_geometry": "CC-BY-SA-3.0 for the PCB layout and derived geometry. See model-assets/PCB-LICENSE.txt.",
+    "model_code": "MIT, see model assembly and renderer source headers and LICENSE."
   },
   "files": [
     {
+      "path": "diffuser-optics.js",
+      "bytes": 12761,
+      "sha256": "60f13613e3fd55b6663249c184773c9494b874de21de0857b02ca405caf6c520",
+      "reference_path": "models/mk2/diffuser-optics.js",
+      "reference_sha256": "60f13613e3fd55b6663249c184773c9494b874de21de0857b02ca405caf6c520",
+      "byte_identical": true
+    },
+    {
       "path": "enclosure-fit.js",
-      "bytes": 21789,
-      "sha256": "33a8c0fba98e078b9497da20289508ff5da08a4cfccc8abafbeec36a336ece99",
+      "bytes": 23590,
+      "sha256": "dd8c4100b1ff3d1029bc21c49cad1688ca2a529662bc80d7eac0a0f02885a6fa",
       "reference_path": "models/mk2/enclosure-fit.js",
-      "reference_sha256": "33a8c0fba98e078b9497da20289508ff5da08a4cfccc8abafbeec36a336ece99",
+      "reference_sha256": "dd8c4100b1ff3d1029bc21c49cad1688ca2a529662bc80d7eac0a0f02885a6fa",
       "byte_identical": true
     },
     {
       "path": "light-model.js",
-      "bytes": 23440,
-      "sha256": "764a0e92f26f6a6f32d00883c780965a852d335b951d9f27e2c1a316fae946e7",
+      "bytes": 25955,
+      "sha256": "4c7099bbd8e6a43b3856faa63f62a29d2a3ef671a1ac7ed35223b0134880dd14",
       "reference_path": "models/mk2/light-model.js",
-      "reference_sha256": "764a0e92f26f6a6f32d00883c780965a852d335b951d9f27e2c1a316fae946e7",
+      "reference_sha256": "4c7099bbd8e6a43b3856faa63f62a29d2a3ef671a1ac7ed35223b0134880dd14",
       "byte_identical": true
     },
     {
@@ -52,6 +63,14 @@
       "sha256": "e0a5f70deb9c79bb8533122057d00f6fb20b2c050ee63123e3e6538da329ceea",
       "reference_path": "models/mk2/model-assets/LICENSE.txt",
       "reference_sha256": "e0a5f70deb9c79bb8533122057d00f6fb20b2c050ee63123e3e6538da329ceea",
+      "byte_identical": true
+    },
+    {
+      "path": "model-assets/PCB-LICENSE.txt",
+      "bytes": 516,
+      "sha256": "04c5fcb3e97b1ab6db914192219b9c9f8cfc4adfd0eeb47b053eab195e8b7660",
+      "reference_path": "models/mk2/model-assets/PCB-LICENSE.txt",
+      "reference_sha256": "04c5fcb3e97b1ab6db914192219b9c9f8cfc4adfd0eeb47b053eab195e8b7660",
       "byte_identical": true
     },
     {
@@ -71,19 +90,35 @@
       "byte_identical": true
     },
     {
+      "path": "model-assets/pcb-layout.json",
+      "bytes": 6440,
+      "sha256": "2a743365954476f498b733d4e84159c8a9e6b0cd2327f1bd4910903ab170748f",
+      "reference_path": "models/mk2/model-assets/pcb-layout.json",
+      "reference_sha256": "2a743365954476f498b733d4e84159c8a9e6b0cd2327f1bd4910903ab170748f",
+      "byte_identical": true
+    },
+    {
       "path": "model-assets/seating-fit.json",
-      "bytes": 3399,
-      "sha256": "04516bf501b32ff8667a1738a99fad4cfde10cb5bcfc30836841115111d0c3c5",
+      "bytes": 4073,
+      "sha256": "764b507f5b94f71b2ccae88a98cbcede02e705b7b9deadddd077a6021a5aa89f",
       "reference_path": "models/mk2/model-assets/seating-fit.json",
-      "reference_sha256": "04516bf501b32ff8667a1738a99fad4cfde10cb5bcfc30836841115111d0c3c5",
+      "reference_sha256": "764b507f5b94f71b2ccae88a98cbcede02e705b7b9deadddd077a6021a5aa89f",
       "byte_identical": true
     },
     {
       "path": "model-assets/source.json",
-      "bytes": 14397,
-      "sha256": "2ad70d26bed617c673da560aada880008d388b5ca9e5520824ab6984284b211d",
+      "bytes": 24422,
+      "sha256": "f65fdbbdf81f03a79672ca978f05963989fe803706c39300e8141aa933b9894f",
       "reference_path": "models/mk2/model-assets/source.json",
-      "reference_sha256": "2ad70d26bed617c673da560aada880008d388b5ca9e5520824ab6984284b211d",
+      "reference_sha256": "f65fdbbdf81f03a79672ca978f05963989fe803706c39300e8141aa933b9894f",
+      "byte_identical": true
+    },
+    {
+      "path": "pcb-model.js",
+      "bytes": 18774,
+      "sha256": "30ee9b0e9ba7dc8da5fd53005104e472268899882f926c51e2b822510f012c22",
+      "reference_path": "models/mk2/pcb-model.js",
+      "reference_sha256": "30ee9b0e9ba7dc8da5fd53005104e472268899882f926c51e2b822510f012c22",
       "byte_identical": true
     },
     {
@@ -136,15 +171,15 @@
     },
     {
       "path": "viewer.js",
-      "bytes": 23975,
-      "sha256": "d4dfe04e32537216f1cb4467335a930c36f505fdba6a05aeb9e69686f50a6184",
+      "bytes": 20937,
+      "sha256": "a631142d07b52699990ad7d0beee9e10188a17ac118fbc4b19cf32a59b5f24e7",
       "reference_path": "design-nightlab/source/studio-3d.js",
       "reference_sha256": "2864d9f599003cf31b3ac3a6ecb8d9d7663e5aae7972d822fd2ca62094421baa",
       "byte_identical": false
     }
   ],
   "model_repository": "https://github.com/b1ug/blink1-models",
-  "model_version": "0.1.0",
-  "model_manifest_sha256": "8da04a0b8af074ad9f559921bd19c3a2fe0e6522d479012c3373b95d383bf38a",
-  "model_commit": "dc531ccaa88e031faf6c0cd32e0102d9a18e9b8d"
+  "model_version": "0.2.0",
+  "model_manifest_sha256": "463635d56bc279abb88e19554370c5b9b9e6fe1c4fb9bf78917b6b1c43956a13",
+  "model_commit": "7be4133489b734314aba9f0fff944b57b7d21791"
 }
