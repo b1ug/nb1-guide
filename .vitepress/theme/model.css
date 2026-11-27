@@ -40,16 +40,9 @@
 .stage-face-frame { fill: #8d9ba4; stroke: #657985; stroke-width: 1.2; }
 .stage-face-diffuser { fill: var(--face-color); stroke: #ffffff; stroke-width: 3; stroke-linejoin: round; }
 .stage-face-wordmark { fill: #314c5b; stroke: #ffffff; stroke-width: 1.2; stroke-linejoin: round; paint-order: stroke; }
-.stage-face-unspecified { display: none; }
-.stage-face-hatch-line { fill: none; stroke: #bdcdd6; stroke-width: 2; }
-.stage-face[data-face-state="off"] .stage-face-diffuser { fill: #e3e9ed; }
-.stage-face[data-face-state="unspecified"] .stage-face-diffuser { fill: #f7fafb; stroke: #9bb0bd; stroke-width: 1.5; stroke-dasharray: 4 4; }
-.stage-face[data-face-state="unspecified"] .stage-face-unspecified { display: block; }
 .stage-face figcaption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 8px; margin: 0; padding-top: 5px; border-top: 1px solid var(--ui-line); color: var(--ui-muted); font: var(--type-caption)/1.5 var(--font-ui); }
 .stage-face-state { display: inline-flex; align-items: center; gap: 6px; }
 .stage-face-state::before { content: ""; width: 7px; height: 7px; flex: none; border: 1px solid var(--ui-control-line); border-radius: 50%; background: var(--face-color); }
-.stage-face[data-face-state="off"] .stage-face-state::before { background: #243b49; }
-.stage-face[data-face-state="unspecified"] .stage-face-state::before { border-style: dashed; background: transparent; }
 .stage-face figcaption code { margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--ui-ink); font: var(--type-caption)/1.5 var(--font-mono); }
 .light-stage[data-three-state="ready"] .stage-fallback { display: none; }
 .light-stage:not([data-three-state="ready"]) canvas[data-light-canvas] { visibility: hidden; }

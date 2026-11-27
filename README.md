@@ -78,8 +78,8 @@ Node.js is required to develop this documentation site or rebuild a frontend. It
 
 ## License
 
-[MIT](LICENSE), copied from nb1 with its existing copyright notice, covers the documentation and theme code. Optional CAD/model derivatives retain CC BY-SA 4.0 and Three.js retains MIT; their notices are preserved under `public/nightlab/`. API documentation retains its source attribution above.
+[MIT](LICENSE), copied from nb1 with its existing copyright notice, covers the documentation and theme code. The optional mk2 model uses CC BY-SA 4.0 for enclosure geometry and CC BY-SA 3.0 for the PCB layout and its derived geometry. The site ships both notices and the Three.js MIT license. API documentation retains its source attribution above.
 
 ## Nightlab presentation
 
-The docs chrome uses the exact semantic colors and four type roles from the selected `design-nightlab` handoff. The home uses its local 3D model as a native VitePress component, with the original two-face fallback. It does not compile or play effects and makes no device connection. The optional model assets load on the home route only. Model and Three.js licenses, source hashes and integration changes are recorded in [`public/nightlab/source-receipt.json`](public/nightlab/source-receipt.json). Documentation and API attribution follow the released core; original model geometry, fonts and approved image bytes are preserved.
+The docs chrome uses the exact semantic colors and four type roles from the selected `design-nightlab` handoff. Both home pages render the assembled mk2 using the catalog’s studio lighting. The top LED is blue and the bottom LED red. Without WebGL, the two-face illustration displays the same demo colors. It does not compile or play effects and makes no device connection. The optional model assets load on the home route only. Model and Three.js licenses, source hashes and integration changes are recorded in [`public/nightlab/source-receipt.json`](public/nightlab/source-receipt.json). Documentation and API attribution follow the released core; original model geometry, fonts and approved image bytes are preserved.

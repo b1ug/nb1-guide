@@ -80,4 +80,4 @@ Workbench 前端独立维护，通过校验后的静态产物导入 nb1；它是
 
 ## Nightlab 展示层
 
-文档导航、搜索、菜单、表格和代码区使用交接包的语义配色与四种字号。首页通过原生 VitePress 组件展示原 3D 模型和双面回退视图，不包含编译器、WASM 或设备连接。模型资源仅在首页加载；来源、接入变更及原 CAD 的 CC BY-SA 4.0、Three.js 的 MIT 许可记录保存在 [`public/nightlab/source-receipt.json`](public/nightlab/source-receipt.json)。原模型几何、字体与品牌图片字节保留；文档与协议说明同步发行来源。
+文档导航、搜索、菜单、表格和代码区使用交接包的语义配色与四种字号。中英文首页沿用模型目录的场景光照，展示组装好的 mk2。上方 LED 为蓝色，下方 LED 为红色。WebGL 不可用时，双面示意图显示相同的演示颜色。首页按需加载模型，无需连接设备。外壳采用 CC BY-SA 4.0，PCB 布局及其衍生几何采用 CC BY-SA 3.0，Three.js 使用 MIT 许可。来源与接入变更记录见 [`public/nightlab/source-receipt.json`](public/nightlab/source-receipt.json)。原模型几何、字体与品牌图片字节保留；文档与协议说明同步发行来源。

@@ -37,8 +37,8 @@
       },
       {
         "path": ".vitepress/theme/ASSETS.md",
-        "bytes": 2486,
-        "sha256": "bc25ea3a00fa4614e60f1d46509e92ce066afc07c34b9dfeede29663eda521b7"
+        "bytes": 2387,
+        "sha256": "0ed4b7b3be460a083a96f7b54589ac1342f4e479b6197edca59f0cc550614729"
       },
       {
         "path": ".vitepress/theme/HomeStatus.vue",
@@ -47,13 +47,13 @@
       },
       {
         "path": ".vitepress/theme/ModelAttribution.vue",
-        "bytes": 1821,
-        "sha256": "4d09e1f895e95e69b4989cd0aad3a522799d821f9fee8515721c8f5a907721ef"
+        "bytes": 1865,
+        "sha256": "ddfa367d36eb2fb2b2ae6bb778526e161c40931aa2ee88cb66c214c332dcada6"
       },
       {
         "path": ".vitepress/theme/NightlabModel.vue",
-        "bytes": 9698,
-        "sha256": "f4c4a631f065b0f80dff0b7270febdf34b924595c3ef0054815b1e3ee7db4be9"
+        "bytes": 9588,
+        "sha256": "f807cec274531e52923c807062d43377bab287edea055986594e1a015a4be9ee"
       },
       {
         "path": ".vitepress/theme/SearchFocusGuard.ts",
@@ -72,8 +72,8 @@
       },
       {
         "path": ".vitepress/theme/model.css",
-        "bytes": 9469,
-        "sha256": "baaf4263da4737b1647524809a1cc25331f6eb128eb0a9d0b788e71efd297735"
+        "bytes": 8843,
+        "sha256": "cd11b428d243f8f420cb6c67e2961b8b5d5d78e25456572b071f7a49eacf25bf"
       },
       {
         "path": "LICENSE",
@@ -82,13 +82,13 @@
       },
       {
         "path": "README.md",
-        "bytes": 7928,
-        "sha256": "0406add68d7af3cd54cd9206e433eeaec3dc25c5bcd89469caec165e5b9e21bb"
+        "bytes": 8074,
+        "sha256": "86822c1a8719a112d55a33afc409746a58cdcfa6c38365752a82e6f37ff9865d"
       },
       {
         "path": "README.zh-CN.md",
-        "bytes": 6889,
-        "sha256": "412f1fbc62f800493b90c5318fecd9d589ddf99317aa7d61d34d7adc9abc35ea"
+        "bytes": 7018,
+        "sha256": "e2d39e93c9cf70eb5794a5118c9e73dd21c298b420af12c9c81a64dbd390e38c"
       },
       {
         "path": "assets/nb1-icon.png",
@@ -243,12 +243,12 @@
       {
         "path": "package-lock.json",
         "bytes": 92706,
-        "sha256": "4b11746037ed149a969bb435326f341fffa88dbe858c0bac91a06ce4eecf7129"
+        "sha256": "dd4bb38e5bef5af7e0b964e021848a50d63387264019a78b29772262bbfc6a65"
       },
       {
         "path": "package.json",
         "bytes": 1110,
-        "sha256": "95b04ea3602648bb465e033b3715b8ff91aad7561810b6bd7dfd0226898294c6"
+        "sha256": "b98c164195d53ed1abee56fb77367e6381ddb3715a15372944916bc6d02b851d"
       },
       {
         "path": "pages/index.md",
@@ -317,8 +317,8 @@
       },
       {
         "path": "public/nightlab/source-receipt.json",
-        "bytes": 7519,
-        "sha256": "a1643e528f4ddc7e1062601a4d11bd82a227f55995b3cbfe184bb7b2b84c5e61"
+        "bytes": 9224,
+        "sha256": "763ba3eb4f18962d8a910898476741ab0811efc879ced76e59c5e6c98f9fb133"
       },
       {
         "path": "public/nightlab/vendor/three/LICENSE.txt",
@@ -352,8 +352,8 @@
       },
       {
         "path": "public/nightlab/viewer.js",
-        "bytes": 23975,
-        "sha256": "d4dfe04e32537216f1cb4467335a930c36f505fdba6a05aeb9e69686f50a6184"
+        "bytes": 20937,
+        "sha256": "a631142d07b52699990ad7d0beee9e10188a17ac118fbc4b19cf32a59b5f24e7"
       },
       {
         "path": "scripts/check-dist.mjs",

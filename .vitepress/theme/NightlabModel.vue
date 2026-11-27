@@ -4,6 +4,7 @@ import { useData, withBase } from 'vitepress'
 const { lang } = useData()
 const zh = computed(() => lang.value === 'zh-CN')
 const stage = ref<HTMLElement>()
+const previewColors = ['#003dff', '#ff1804']
 let dispose: (() => void) | undefined
 let unmounted = false
 // Exact projections from the original CAD engraving, CC BY-SA 4.0.
@@ -18,15 +19,14 @@ onMounted(async () => {
 onBeforeUnmount(() => { unmounted = true; dispose?.() })
 </script>
 <template>
-<section ref="stage" class="light-stage nightlab-home-model" data-light-stage data-studio-source="none" :aria-label="zh ? 'blink(1) mk2 交互模型' : 'Interactive blink(1) mk2 model'">
-<div class="stage-theatre"><div class="stage-fallback" role="group" :aria-label="zh ? '两个固定灯面的二维预览' : 'Two-dimensional views of the two fixed LED faces'"><figure v-for="(wordmark, index) in wordmarks" :key="index" class="stage-face" :data-fallback-face="index ? 'two' : 'one'" :data-led="index + 1" data-face-state="unspecified" role="img" :aria-label="`LED ${index + 1} · ${index ? 'ThingM' : 'blink(1)'}`">
+<section ref="stage" class="light-stage nightlab-home-model" data-light-stage data-studio-source="preview" :style="{ '--stage-one': previewColors[0], '--stage-two': previewColors[1] }" :aria-label="zh ? 'blink(1) mk2 交互模型' : 'Interactive blink(1) mk2 model'">
+<div class="stage-theatre"><div class="stage-fallback" role="group" :aria-label="zh ? '两个固定灯面的二维预览' : 'Two-dimensional views of the two fixed LED faces'"><figure v-for="(wordmark, index) in wordmarks" :key="index" class="stage-face" :data-fallback-face="index ? 'two' : 'one'" :data-led="index + 1" role="img" :aria-label="`LED ${index + 1} · ${index ? 'ThingM' : 'blink(1)'} · ${previewColors[index]}`">
 <div class="stage-face-heading"><strong>LED {{ index + 1 }}</strong><span>{{ index ? 'ThingM' : 'blink(1)' }}</span></div>
 <svg class="stage-face-art" viewBox="0 0 240 152" aria-hidden="true" focusable="false">
-<defs><pattern :id="`face-unspecified-${index}`" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0V9" class="stage-face-hatch-line" /></pattern></defs>
 <path class="stage-face-usb" d="M14 49H72V103H14Z" /><path v-if="index === 0" class="stage-face-usb-hole" d="M31 57H42V64H31ZM50 57H61V64H50Z" /><path v-else class="stage-face-usb-seam" d="M19 54H65V98H19Z" />
-<path class="stage-face-frame" d="M68 24H184C202 24 216 38 216 56V96C216 114 202 128 184 128H68Z" /><path class="stage-face-diffuser" d="M73 28H183C199 28 212 40 212 56V96C212 112 199 124 183 124H73Z" /><path class="stage-face-unspecified" :fill="`url(#face-unspecified-${index})`" d="M73 28H183C199 28 212 40 212 56V96C212 112 199 124 183 124H73Z" /><path class="stage-face-wordmark" fill-rule="evenodd" :d="wordmark" /></svg>
-<figcaption><span class="stage-face-state">{{ zh ? '未指定' : 'Not specified' }}</span><code>—</code></figcaption></figure></div><span class="stage-dimension" data-type-role="caption">blink(1) mk2</span></div>
-<details class="home-model-details"><summary>{{ zh ? '三维模型信息' : '3D model details' }}</summary><div class="stage-channels"><div class="stage-channel"><span id="home-led-one">LED 1 · blink(1)</span><output data-studio-color="one" aria-labelledby="home-led-one">—</output></div><div class="stage-channel"><span id="home-led-two">LED 2 · ThingM</span><output data-studio-color="two" aria-labelledby="home-led-two">—</output></div></div>
+<path class="stage-face-frame" d="M68 24H184C202 24 216 38 216 56V96C216 114 202 128 184 128H68Z" /><path class="stage-face-diffuser" d="M73 28H183C199 28 212 40 212 56V96C212 112 199 124 183 124H73Z" /><path class="stage-face-wordmark" fill-rule="evenodd" :d="wordmark" /></svg>
+<figcaption><span class="stage-face-state">{{ zh ? '演示颜色' : 'Preview color' }}</span><code>{{ previewColors[index] }}</code></figcaption></figure></div><span class="stage-dimension" data-type-role="caption">blink(1) mk2 · {{ zh ? '屏幕预览' : 'Screen preview' }}</span></div>
+<details class="home-model-details"><summary>{{ zh ? '三维模型信息' : '3D model details' }}</summary><div class="stage-channels"><div class="stage-channel"><span id="home-led-one">LED 1 · blink(1)</span><output data-studio-color="one" aria-labelledby="home-led-one">{{ previewColors[0] }}</output></div><div class="stage-channel"><span id="home-led-two">LED 2 · ThingM</span><output data-studio-color="two" aria-labelledby="home-led-two">{{ previewColors[1] }}</output></div></div>
 <div class="stage-footer"><span>{{ zh ? '交互模型 · 未连接设备' : 'Interactive model · no device connection' }}</span></div>
 </details>
 </section>
